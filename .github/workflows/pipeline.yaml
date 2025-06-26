@@ -66,8 +66,7 @@ jobs:
         run: |
           sam package \
             --region ${TESTING_REGION} \
-            --output-template-file packaged-testing.yaml \
-            --resolve-s3
+            --output-template-file packaged-testing.yaml
 
       - name: Almacenar plantilla de testeo compilada para el siguiente paso
         uses: actions/upload-artifact@v4
@@ -79,8 +78,7 @@ jobs:
         run: |
           sam package \
             --region ${PROD_REGION} \
-            --output-template-file packaged-prod.yaml \
-            --resolve-s3
+            --output-template-file packaged-prod.yaml
 
       - name: Almacenar plantilla de producción compilada para el siguiente paso
         uses: actions/upload-artifact@v4
